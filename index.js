@@ -1,12 +1,15 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-const dbf = require("./dbfile");
+const dbf = require("./src/dbfile");
+require('dotenv').config()
 const path = require("path");
-const port = 3000;
+const port = process.env.PORT
 
 // p = mongoose.connect("mongodb://localhost:27017/registerpage");
-p = mongoose.connect("mongodb+srv://Abhijeet2109:abhijeet21o9@cluster0.ohwhhle.mongodb.net/?retryWrites=true&w=majority");
+p = mongoose.connect(
+  "mongodb+srv://Abhijeet2109:abhijeet21o9@cluster0.ohwhhle.mongodb.net/?retryWrites=true&w=majority"
+);
 
 app.set("view engine", "hbs");
 app.use(express.urlencoded({ extended: false }));
@@ -49,15 +52,14 @@ app.post("/verify", async (req, res) => {
   try {
     // const d = new dbf;
     const da = await dbf.find({ email: em });
-    if (da[0]['password']===psw){
-      res.render("homepage")
-    }
-    else{
-      res.render("signin",{invalid:"Invalid ID password"})
+    if (da[0]["password"] === psw) {
+      res.render("homepage");
+    } else {
+      res.render("signin", { invalid: "Invalid ID password" });
     }
   } catch (e) {
     // console.log(e);
-    res.render("signin",{invalid:"Invalid ID password"})
+    res.render("signin", { invalid: "Invalid ID password" });
   }
 });
 
