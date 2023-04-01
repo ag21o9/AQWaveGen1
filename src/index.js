@@ -29,7 +29,8 @@ app.post("/signup", async (req, res) => {
       });
 
       const v = await data.save();
-      res.send("signup successfull");
+      // res.sendFile("signup successfull");
+      res.render("signin")
     } catch (e) {
       console.log(e);
     }
@@ -42,6 +43,11 @@ app.post("/signup", async (req, res) => {
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
+});
+
+app.get("/home", (req, res) => {
+  // res.send("Hello World!");
+  res.render("homepage")
 });
 
 app.listen(port, () => {
