@@ -64,6 +64,10 @@ app.post("/verify", async (req, res) => {
   }
 });
 
+// app.get('/info/:name',(req,res)=>{
+//   console.log(req.params.name)
+// })
+
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
