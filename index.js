@@ -4,11 +4,10 @@ const mongoose = require("mongoose");
 const dbf = require("./src/dbfile");
 require('dotenv').config()
 const path = require("path");
-const port = process.env.PORT
+const port = 3000
 
-// p = mongoose.connect("mongodb://localhost:27017/registerpage");
-p = mongoose.connect(
-  "mongodb+srv://Abhijeet2109:abhijeet21o9@cluster0.ohwhhle.mongodb.net/?retryWrites=true&w=majority"
+
+p = mongoose.connect("mongodb+srv://Abhijeet2109:abhijeet21o9@cluster0.ohwhhle.mongodb.net/?retryWrites=true&w=majority"
 );
 
 app.set("view engine", "hbs");
