@@ -17,6 +17,8 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
+app.use(express.static(path.join(__dirname,"/public")))
+
 app.post("/signup", async (req, res) => {
   var name = req.body.name;
   var email = req.body.email;
