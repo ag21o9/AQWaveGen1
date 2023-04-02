@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const dbf = require("./src/dbfile");
 require('dotenv').config()
 const path = require("path");
-const port = process.env.PORT
+const port = process.env.PORT || 3000
 
 // p = mongoose.connect("mongodb://localhost:27017/registerpage");
 p = mongoose.connect(
