@@ -7,8 +7,7 @@ const path = require("path");
 const port = process.env.PORT || 3000
 
 // p = mongoose.connect("mongodb://localhost:27017/registerpage");
-p = mongoose.connect(
-  process.env.DATABASE
+p = mongoose.connect("mongodb+srv://Abhijeet2109:abhijeet21o9@cluster0.ohwhhle.mongodb.net/?retryWrites=true&w=majority"
 );
 
 app.set("view engine", "hbs");
