@@ -13,12 +13,18 @@ const port = process.env.PORT || 3000;
 const newsapi = new NewsAPI("9f133693e41344ef9ea4b3e2eed4df22");
 
 // const newsf = (n)=>{
+
+
 let data;
+var d = new Date();
+datetoday = d.toISOString().split('T')[0]
+d.setDate(d.getDate()-1);
+dateytsday = d.toISOString().split('T')[0]
 newsapi.v2
   .everything({
     q: "technology",
-    from: "2023-12-03",
-    to: "2023-01-14",
+    from: dateytsday,
+    to: datetoday,
     language: "en",
     page: 2,
   })
