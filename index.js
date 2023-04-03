@@ -119,6 +119,10 @@ app.get("/signin", (req, res) => {
   // res.send("Hello World!");
   res.render("signin");
 });
+app.get("/intp", (req, res) => {
+  // res.send("Hello World!");
+  res.render("interpret");
+});
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
