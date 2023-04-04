@@ -97,6 +97,13 @@ app.post("/verify", async (req, res) => {
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
+app.get("/about", (req, res) => {
+  try{
+    res.sendFile("about.html")
+  }catch{
+    res.render("error")
+  }
+});
 app.get("/newspage", (req, res) => {
   // console.log(newsf(0));
   try {
