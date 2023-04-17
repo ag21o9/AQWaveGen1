@@ -90,9 +90,10 @@ app.post("/verify", async (req, res) => {
   }
 });
 
-// app.get('/info/:name',(req,res)=>{
-//   console.log(req.params.name)
-// })
+app.get('/info/:name/:age',(req,res)=>{
+  console.log(req.params.name)
+  console.log(req.params.age)
+})
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
