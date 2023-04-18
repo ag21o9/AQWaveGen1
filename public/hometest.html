@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <style>
+      .loader {
+        background: #000;
+        background: radial-gradient(#222, #000);
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 99999;
+      }
+
+      .loader-inner {
+        bottom: 0;
+        height: 60px;
+        left: 0;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100px;
+      }
+
+      .loader-line-wrap {
+        animation: spin 2000ms cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
+        box-sizing: border-box;
+        height: 50px;
+        left: 0;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        transform-origin: 50% 100%;
+        width: 100px;
+      }
+      .loader-line {
+        border: 4px solid transparent;
+        border-radius: 100%;
+        box-sizing: border-box;
+        height: 100px;
+        left: 0;
+        margin: 0 auto;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100px;
+      }
+      .loader-line-wrap:nth-child(1) {
+        animation-delay: -50ms;
+      }
+      .loader-line-wrap:nth-child(2) {
+        animation-delay: -100ms;
+      }
+      .loader-line-wrap:nth-child(3) {
+        animation-delay: -150ms;
+      }
+      .loader-line-wrap:nth-child(4) {
+        animation-delay: -200ms;
+      }
+      .loader-line-wrap:nth-child(5) {
+        animation-delay: -250ms;
+      }
+
+      .loader-line-wrap:nth-child(1) .loader-line {
+        border-color: hsl(0, 80%, 60%);
+        height: 90px;
+        width: 90px;
+        top: 7px;
+      }
+      .loader-line-wrap:nth-child(2) .loader-line {
+        border-color: hsl(60, 80%, 60%);
+        height: 76px;
+        width: 76px;
+        top: 14px;
+      }
+      .loader-line-wrap:nth-child(3) .loader-line {
+        border-color: hsl(120, 80%, 60%);
+        height: 62px;
+        width: 62px;
+        top: 21px;
+      }
+      .loader-line-wrap:nth-child(4) .loader-line {
+        border-color: hsl(180, 80%, 60%);
+        height: 48px;
+        width: 48px;
+        top: 28px;
+      }
+      .loader-line-wrap:nth-child(5) .loader-line {
+        border-color: hsl(240, 80%, 60%);
+        height: 34px;
+        width: 34px;
+        top: 35px;
+      }
+
+      @keyframes spin {
+        0%,
+        15% {
+          transform: rotate(0);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+    <title>HomePage</title>
+  </head>
+  <body onload="func1()">
+    <div class="loader" id="loader">
+      <div class="loader-inner">
+        <div class="loader-line-wrap">
+          <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+          <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+          <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+          <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+          <div class="loader-line"></div>
+        </div>
+      </div>
+    </div>
+    <!-- NavBar -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">AQWAVE</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#" style="color: black; size: 30px;">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/intp" style="color: black; size: 30px;">Interpreter</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about" style="color: black; size: 30px;">AboutUs</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdownMenuLink"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false" style="color: black; size: 30px;"
+              >
+                Sources
+              </a>
+              <ul
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+                <li><a class="dropdown-item" href="#">Hosting Platform</a></li>
+                <li><a class="dropdown-item" href="#">Devices used</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Developer Portfolio</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- NavBar -->
+
+    <!-- Slides -->
+    <div
+      id="carouselExampleDark"
+      class="carousel carousel-dark slide"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleDark"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleDark"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleDark"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+          <img
+            src="https://source.unsplash.com/random/1920x1080?laptops"
+            height="800px"
+            width="800px"
+            class="d-block w-100"
+            alt="..."
+          />
+          <div class="carousel-caption d-none d-md-block">
+            <h4 style="color: white">UNDER DEVELOPMENT</h4>
+            <p style="color: white">
+              TECH NEWS HER (AQWAVE)
+            </p>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img
+            src="https://source.unsplash.com/random/1920x1080?hacker"
+            height="800px"
+            width="800px"
+            class="d-block w-100"
+            alt="..."
+          />
+          <div class="carousel-caption d-none d-md-block">
+            <h4 style="color: white">UNDER DEVELOPMENT</h4>
+            <p style="color: white">
+              TECH NEWS HERE (AQWAVE)
+            </p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://source.unsplash.com/random/1920x1080?technology"
+            height="800px"
+            width="800px"
+            class="d-block w-100"
+            alt="..."
+          />
+          <div class="carousel-caption d-none d-md-block">
+            <h4 style="color: white">UNDER DEVELOPMENT</h4>
+            <p style="color: white">
+            TECH NEWS HERE (AQWAVE)
+            </p>
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleDark"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleDark"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <!-- Slides -->
+    <script>
+      var load = document.getElementById("loader");
+      const func1 = () => {
+        load.remove();
+      };
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
