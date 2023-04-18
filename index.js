@@ -80,7 +80,8 @@ app.post("/verify", async (req, res) => {
     // const d = new dbf;
     const da = await dbf.find({ email: em });
     if (da[0]["password"] === psw) {
-      res.render("homepage");
+      // res.render("homepage");
+      res.sendFile(path.join(__dirname,"/public/home.html"))
     } else {
       res.render("signin", { invalid: "Invalid ID password" });
     }
