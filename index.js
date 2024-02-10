@@ -68,7 +68,7 @@ app.post("/signup", async (req, res) => {
     }
   } else {
     res.render("index", {
-      invalid: "password is invalid",
+      invalid: "INVALID CREDENTIALS",
     });
   }
 });
@@ -84,11 +84,11 @@ app.post("/verify", async (req, res) => {
       // res.render("homepage");
       res.sendFile(path.join(__dirname,"/public/home.html"))
     } else {
-      res.render("signin", { invalid: "Invalid ID password" });
+      res.render("signin", { invalid: "INVALID ID & PASSWORD" });
     }
   } catch (e) {
     // console.log(e);
-    res.render("signin", { invalid: "Invalid ID password" });
+    res.render("signin", { invalid: "INVALID ID & PASSWORD" });
   }
 });
 
