@@ -52,7 +52,7 @@ app.post("/signup", async (req, res) => {
   var pass = req.body.password;
   var pass2 = req.body.confirm_password;
 
-  if (pass === pass2) {
+  if (pass === pass2 && email!="" && pass!="") {
     try {
       var data = new dbf({
         name: name,
@@ -80,7 +80,7 @@ app.post("/verify", async (req, res) => {
   try {
     // const d = new dbf;
     const da = await dbf.find({ email: em });
-    if (da[0]["password"] === psw) {
+    if (da[0]["password"] === psw && em!="" && psw!="") {
       // res.render("homepage");
       res.sendFile(path.join(__dirname,"/public/home.html"))
     } else {
