@@ -92,9 +92,6 @@ app.post("/verify", async (req, res) => {
   }
 });
 
-// app.get('/:info',(req,res)=>{
-//   res.render('error');
-// })
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
@@ -174,6 +171,9 @@ app.get("/intp", (req, res) => {
   // res.send("Hello World!");
   res.render("interpret");
 });
+app.get('/:info',(req,res)=>{
+  res.render('error');
+})
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
