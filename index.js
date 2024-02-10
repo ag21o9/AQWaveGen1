@@ -92,9 +92,9 @@ app.post("/verify", async (req, res) => {
   }
 });
 
-app.get('/:info',(req,res)=>{
-  res.render('error');
-})
+// app.get('/:info',(req,res)=>{
+//   res.render('error');
+// })
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
