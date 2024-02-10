@@ -93,9 +93,7 @@ app.post("/verify", async (req, res) => {
 });
 
 app.get('/:info',(req,res)=>{
-  console.log(req.params.name)
-  console.log(req.params.age)
-  res.send("Their is no such route present at present")
+  res.render('error');
 })
 
 app.get("/", (req, res) => {
