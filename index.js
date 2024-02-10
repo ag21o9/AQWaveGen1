@@ -41,6 +41,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.get("/", (req, res) => {
   res.render("index");
+  console.log("site open")
 });
 
 app.use(express.static(path.join(__dirname, "/public")));
